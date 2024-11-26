@@ -1,0 +1,65 @@
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Keeps the chart centered */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.select-container {
+    margin-left: -1500px;
+    /* Adjust this value to move the dropdown slightly to the left */
+    margin-bottom: 40px;
+    /* Add some space between the dropdown and the chart */
+}
+
+.recharts-wrapper {
+    width: 100%;
+    /* Ensures the chart takes up available space */
+}
+
+.recharts-tooltip-wrapper {
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.recharts-cartesian-axis-tick text {
+    font-size: 9px;
+    fill: #666;
+    /* Color for X-axis and Y-axis labels */
+    font-weight: bold;
+}
+
+.recharts-bar-rectangle {
+    stroke: #fff;
+    /* Adds a thin border around the bars */
+    stroke-width: 2px;
+}
+
+.recharts-line-dot {
+    stroke: #ff7300;
+    stroke-width: 2px;
+    fill: #ff7300;
+    /* Orange dots for line data points */
+}
+
+.recharts-legend-wrapper {
+    font-weight: bold;
+    /* Makes the legend text bold */
+}
+
+.recharts-yAxis-label,
+.recharts-xAxis-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Additional spacing for legends or labels if needed */
+.legend-item {
+    margin-top: 10px;
+}

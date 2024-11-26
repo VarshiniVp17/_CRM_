@@ -1,0 +1,109 @@
+.organizationDetailsForm {
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  
+  
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #0e1954;
+  outline: none;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+.formActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px; 
+}
+
+.submitButton, .cancelButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton {
+  background-color: #0e1954;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #0e1954;
+}
+
+.cancelButton {
+  background-color: #0e1954;
+  color: white;
+}
+
+.cancelButton:hover {
+  background-color: #0e1954;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .formGroup {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

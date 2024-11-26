@@ -1,0 +1,68 @@
+.opportunity-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center; /* Align buttons to the right */
+    margin-top: 20px; /* Add space above the button row */
+}
+
+.button-row button {
+    padding: 10px 15px; /* Button padding */
+    margin-left: 10px; /* Space between buttons */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #0e1954; /* Primary color */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color change */
+    
+}
+
+.button-row button:hover {
+    background-color: #0e1954; /* Darker blue on hover */
+}
+
+.button-row button:disabled {
+    background-color: #cccccc; /* Gray background for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor for disabled button */
+}
+
+
+

@@ -1,0 +1,183 @@
+/* General Styles */
+.App {
+  font-family: Arial, sans-serif;
+  margin: 0 auto; /* Centers the entire App */
+  padding: 20px; /* Adds padding for better spacing on larger screens */
+  max-width: 100%; /* Ensure the app never exceeds screen width */
+  box-sizing: border-box; /* Ensures padding does not affect width calculations */
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* Allows filters to wrap on smaller screens */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%; /* Ensure the table spans the full container width */
+  border-collapse: collapse; /* Ensure no gaps between borders */
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  word-wrap: break-word; /* Ensures long text wraps inside cells */
+}
+
+th {
+  cursor: pointer;
+}
+
+/* Sorting Icons */
+.sort-icon {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.sort-icon.ascending {
+  transform: rotate(180deg);
+}
+
+.sort-icon.descending {
+  transform: rotate(0deg);
+}
+
+/* Cell Styles */
+.cell {
+  background-color: white !important;
+  border: none;
+}
+
+.value {
+  background-color: white !important;
+  color: black !important;
+  font-size: small;
+  border: none;
+}
+
+tbody td:nth-child(6),
+tbody td:nth-child(7),
+tbody td:nth-child(9),
+tbody td:nth-child(10) {
+  text-align: right;
+}
+
+tbody td:nth-child(8) {
+  text-align: left !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .App {
+    padding: 15px; /* Reduce padding on medium screens */
+  }
+  
+  table {
+    font-size: 0.9em; /* Slightly smaller font on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .filters {
+    flex-direction: column; /* Stack filters vertically on smaller screens */
+    gap: 5px; /* Reduce the gap between filters */
+  }
+  
+  table {
+    font-size: 0.85em; /* Adjust table font size on smaller screens */
+  }
+  
+  th, td {
+    padding: 6px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 5px;
+  }
+
+  table {
+    font-size: 0.8em; /* Smaller font size for very small screens */
+  }
+  
+  th, td {
+    padding: 4px; /* Reduce padding further */
+  }
+  
+  /* Stack filters and buttons fully on top of each other */
+  .filters {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+.reset-button {
+  background-color: #0E1954; /* Example background color */
+  color: white;
+  border: none;
+  padding: 12px 13px;
+  cursor: pointer;
+ 
+  margin-top: 6px; /* Adjust spacing as needed */
+  float: right; /* Move the button to the right */
+}
+
+.reset-button:hover {
+  background-color: #0e1954; /* Darker shade on hover */
+}
+
+
+.csv-button {
+  padding: 10px 10px;     /* Same padding for both buttons */
+  background-color: #0e1954; /* Background color for both buttons */
+  color: white;           /* Text color for both buttons */
+  border: none;           /* No border */
+  border-radius: 5px;    /* Rounded corners */
+  font-size: 16px;        /* Font size */
+  width: 100px;  
+  margin-right: 100px;         /* Fixed width for uniformity */
+}
+
+.pdf-button {
+  background-color: #0e1954; /* Different color for the PDF button */
+  padding: 10px 20px;     /* Same padding for both buttons */
+  background-color: #0e1954; /* Background color for both buttons */
+  color: white;           /* Text color for both buttons */
+  border: none;           /* No border */
+  border-radius: 5px;    /* Rounded corners */
+  font-size: 16px;        /* Font size */
+  width: 150px;           /* Fixed width for uniformity */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  color: #0e1954;
+}
+
+.pagination button.active {
+  background-color: #0E1954;
+  color: #fff;
+}
+
+.pagination button:hover {
+  background-color: #ddd;
+}

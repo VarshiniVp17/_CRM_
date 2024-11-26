@@ -1,0 +1,208 @@
+/* General styling for the report page */
+.report-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Style for the table */
+.report-table {
+    width: 100%; /* Full width of the container */
+    max-width: 1500px; /* Maximum width for a larger table */
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 20px auto; /* Center the table horizontally */
+    table-layout: fixed; /* Ensure columns have a fixed layout */
+    min-height: 600px; /* Minimum height for the table */
+}
+
+/* Style for table headers */
+.report-table thead {
+    background-color: #0E1954;
+}
+
+/* Style for table header cells */
+.report-table th {
+    padding: 20px; /* Increased padding for better readability and height */
+    border: 1px solid #ddd;
+    text-align: center;
+    font-weight: bold; /* Ensure headers are bold */
+    color: #f7ecec;
+}
+
+/* Style for table cells */
+.report-table td {
+    padding: 20px; /* Increased padding for better readability and height */
+    border: 1px solid #ddd;
+    text-align: right; /* Default alignment for numbers */
+    background-color: #ffffff;
+    color: #333;
+    word-wrap: break-word; /* Allow words to break within cells */
+    overflow: hidden; /* Ensure no content overflows */
+    white-space: normal; /* Allow content to wrap */
+    font-weight: bold; /* Make values bold */
+}
+
+/* Align Stage column in the middle */
+.report-table td.stage-column {
+    text-align: center; /* Center alignment for Stage column */
+}
+
+/* Set widths for all columns */
+.report-table thead th:nth-child(1),
+.report-table tbody td:nth-child(1).stage-column {
+    width: 50px;
+    /* Adjust as needed */
+}
+
+.report-table thead th:nth-child(2),
+.report-table tbody td:nth-child(2) {
+    width: 80px;  /* Adjust as needed */
+}
+
+.report-table thead th:nth-child(3),
+.report-table tbody td:nth-child(3) {
+    width: 80px;  /* Adjust as needed */
+}
+
+.report-table thead th:nth-child(4),
+.report-table tbody td:nth-child(4) {
+    width: 80px; /* Adjust as needed */
+}
+
+.report-table thead th:nth-child(5),
+.report-table tbody td:nth-child(5) {
+    width: 80px;  /* Adjust as needed */
+}
+
+.report-table thead th:nth-child(6),
+.report-table tbody td:nth-child(6) {
+    width: 80px; /* Adjust as needed */
+}
+.report-table thead th:nth-child(7),
+.report-table tbody td:nth-child(7) {
+    width: 80px; /* Adjust as needed */
+}
+
+/* Add hover effect for rows */
+.report-table tr:hover td {
+    background-color: #e6f7ff; /* Light blue on hover */
+}
+
+/* Styling for the report title */
+.report-page h1 {
+    text-align: center;
+    font-size: 20px; /* Adjust font size for title */
+    margin-bottom: 20px; /* Adjust margin if needed */
+    color: #333;
+}
+
+/* Specific styling for the GAP row */
+.report-table .gap-row {
+    background-color: #fff3e6; /* Light peach background for GAP row */
+    font-weight: bold; /* Make text bold */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .report-page {
+        padding: 10px;
+    }
+
+    .report-table {
+        width: 100%; /* Full width on small screens */
+        font-size: 18px; /* Smaller font size */
+        table-layout: auto; /* Ensure table adjusts on smaller screens */
+    }
+
+    .report-table th, .report-table td {
+        padding: 10px; /* Adjust padding for smaller screens */
+        white-space: nowrap; /* Avoid wrapping of text on smaller screens */
+    }
+
+    .report-table .fy-row th {
+        font-size: 60px; /* Change to the desired font size */
+    }
+    
+    .report-table th, .report-table td {
+        overflow: hidden;
+        text-overflow: ellipsis; /* Add ellipsis if the content overflows */
+    }
+}
+/* General styling for the report page */
+.report-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center; /* Center text and elements horizontally */
+}
+
+/* Styling for the report title */
+.report-page h1 {
+    font-size: 40px; /* Adjust font size for title */
+    margin-bottom: 20px; /* Adjust margin if needed */
+    color: #333;
+   
+}
+
+/* Centering the dropdown menu */
+.report-page select {
+    font-size: 16px; /* Adjust font size if needed */
+    padding: 10px; /* Add padding for better appearance */
+    margin-bottom: 20px; /* Add margin below the dropdown */
+}
+
+/* Container for the title */
+.title-container {
+    text-align: center; /* Center text and elements horizontally */
+    margin-bottom: 20px; /* Add margin below the container */
+}
+
+/* Styling for the report title */
+.title-container h1 {
+    font-size: 40px; /* Adjust font size for title */
+    color: #333;
+}
+
+/* Centering the dropdown menu */
+.report-page select {
+    font-size: 16px; /* Adjust font size if needed */
+    padding: 10px; /* Add padding for better appearance */
+    margin-bottom: 20px; /* Add margin below the dropdown */
+    display: block; /* Ensure dropdown takes full width */
+    margin-left: auto; /* Center dropdown */
+    margin-right: auto; /* Center dropdown */
+}
+/* Container for the dropdown */
+.dropdown-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    margin-bottom: 20px; 
+    font-size: 10PX;
+   
+}
+
+/* Styling for the dropdown */
+.dropdown-container select {
+    font-size: 16px; /* Adjust font size if needed */
+    padding: 5px;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px; /* Add padding for better appearance */
+}
+/* Container for the heading and dropdown */
+.dropdown-container {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Space between heading and dropdown */
+    margin-bottom: 20px; /* Add margin below the container */
+}
+
+/* Styling for the heading */
+.dropdown-container h1 {
+    font-size: 20px; /* Adjust font size if needed */
+    margin: 0; /* Remove default margin */
+}

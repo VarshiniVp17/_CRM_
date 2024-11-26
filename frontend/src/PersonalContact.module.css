@@ -1,0 +1,107 @@
+.personalDetailsForm {
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  /* border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  background-color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: #0e1954;
+  outline: none;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+.button-Container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-Button,
+.cancel-Button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.submit-Button {
+  background-color: #0e1954;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-Button:hover {
+  background-color: #0e1954;
+}
+
+.cancel-Button {
+  background-color: #0e1954;
+  color: #fff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cancel-Button:hover {
+  background-color: #0e1954;
+}
+
+@media (max-width: 768px)  {
+  .row {
+    flex-direction: column;
+  }
+
+  .formGroup {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

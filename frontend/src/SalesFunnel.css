@@ -1,0 +1,278 @@
+.report-container {
+  width: 100%;
+  max-width: 1500px; /* Original max-width from the first code */
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+}
+
+/* Flexbox layout for filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.filters label,
+.dropdown-container .dropdown-label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filters > * {
+  flex: 1;
+  min-width: 180px;
+  margin: 5px;
+}
+
+/* Adjustments for dropdown and button */
+.filters select {
+  padding: 5px;
+}
+
+.filter-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.filter-button.active {
+  background-color: #45a049;
+}
+
+.filter-button:not(.active) {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+/* Table styles with minimized column widths */
+table {
+  margin-left: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Forces columns to respect set widths */
+  font-size: 0.8em; /* Smaller font size */
+}
+
+/* Header cells with blue background and white text */
+thead th {
+  background-color: #24e044; /* Blue background */
+  color: white; /* White text */
+  text-align: center;
+  padding: 5px; /* Reduced padding */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+/* Table body cells with reduced padding */
+tbody td {
+  padding: 5px; /* Reduced padding */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ellipsis for overflowed text */
+  border: 1px solid #ddd; /* Original border style */
+  text-align: left; /* Default alignment for other columns */
+}
+
+/* Aligning content in specific columns to the right */
+tbody td:nth-child(6),
+tbody td:nth-child(8) {
+
+  text-align: right;
+}
+
+/* Column width adjustments */
+thead th,
+tbody td {
+  width: 100px;
+}
+
+thead th:nth-child(1),
+tbody td:nth-child(1) {
+  width: 60px;
+}
+
+thead th:nth-child(2),
+tbody td:nth-child(2) {
+  width: 95px; /* Adjust as needed */
+}
+
+thead th:nth-child(3),
+tbody td:nth-child(3) {
+  width: 500px; /* Adjust as needed */
+}
+
+thead th:nth-child(4),
+tbody td:nth-child(4) {
+  width: 300px; /* Adjust as needed */
+}
+
+thead th:nth-child(5),
+tbody td:nth-child(5) {
+  width: 150px; /* Adjust as needed */
+}
+
+thead th:nth-child(6),
+tbody td:nth-child(6) {
+  width: 100px; /* Adjust as needed */
+}
+
+thead th:nth-child(7),
+tbody td:nth-child(7) {
+  width: 100px; /* Adjust as needed */
+}
+
+thead th:nth-child(8),
+tbody td:nth-child(8) {
+  width: 150px; /* Adjust as needed */
+}
+
+thead th:nth-child(9),
+tbody td:nth-child(9) {
+  width: 100px; /* Adjust as needed */
+}
+
+thead th:nth-child(10),
+tbody td:nth-child(10) {
+  width: 149px; /* Adjust as needed */
+}
+
+thead th:nth-child(11),
+tbody td:nth-child(11) {
+  width: 180px; /* Adjust as needed */
+}
+
+thead th:nth-child(12),
+tbody td:nth-child(12) {
+  width: 140px; /* Adjust as needed */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  table {
+      font-size: 0.75em; /* Further reduce font size */
+  }
+
+  thead th,
+  tbody td {
+      padding: 4px; /* Further reduce padding */
+  }
+}
+
+@media (max-width: 480px) {
+  table {
+      font-size: 0.7em; /* Even smaller font size for very small screens */
+  }
+
+  thead th,
+  tbody td {
+      padding: 3px; /* Minimal padding */
+  }
+}
+
+/* Totals row styles */
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-weight: bold;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #0e1954;
+}
+
+.totals-row span {
+  margin-right: 20px;
+}
+
+/* Dropdown container styles */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+.dropdown-label {
+  padding: 10px;
+  background-color: #0e1954; /* Blue background */
+  color: white; /* White text */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.dropdown-arrow {
+  margin-left: 30px;
+}
+
+.dropdown-options {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+/* Header cells with blue background and white text */
+thead th {
+  background-color: #0e1954; /* Blue background */
+  color: white; /* White text */
+  text-align: center;
+  padding: 10px; /* Increase padding for better visibility */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+/* Additional reset to ensure no other styles override the header styles */
+table th {
+  background: #0e1954 !important; /* Force blue background */
+  color: white !important; /* Force white text */
+}
+/* Header cells with blue background, white text, and centered alignment */
+thead th {
+  background-color: #0e1954; /* Blue background */
+  color: white; /* White text */
+  text-align: center; /* Center text horizontally */
+  vertical-align: middle; /* Center text vertically */
+  padding: 10px; /* Padding for better visibility */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+}
+
+/* Additional reset to ensure no other styles override the header styles */
+table th {
+  background: #0e1954 !important; /* Force blue background */
+  color: white !important; /* Force white text */
+  text-align: center !important; /* Force center alignment */
+  vertical-align: middle !important; /* Force vertical alignment */
+}

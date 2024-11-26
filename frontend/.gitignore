@@ -1,0 +1,58 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+ 
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+ 
+# OS Files
+.DS_Store
+Thumbs.db
+ 
+# IDE / Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+ 
+# Optional npm cache directory
+.npm
+ 
+# Optional eslint cache
+.eslintcache
+ 
+# Build directories for Node.js
+dist/
+build/
+ 
+# Temporary files
+temp/
+tmp/
+*.tmp
+*.temp
+ 
+# Coverage directories
+coverage/
+ 
+# React Build Output
+/build
+/build-*
+ 
+# React testing files
+/coverage/
+jest-html-reports/
+ 
+# Ignore lockfiles (optional)
+package-lock.json
+yarn.lock

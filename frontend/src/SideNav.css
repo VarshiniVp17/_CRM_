@@ -1,0 +1,111 @@
+/* SideNav.css */
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Increased width */
+    height: 100vh;
+    background-color: #0e1954;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    box-sizing: border-box;
+    transition: width 0.3s ease;
+}
+
+.side-nav.collapsed {
+    width: 60px; /* Increased collapsed width */
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    cursor: pointer;
+    position: relative; /* Ensure that submenu toggle is positioned correctly */
+}
+
+.side-nav.collapsed .nav-item {
+    justify-content: center;
+}
+
+.nav-item:hover {
+    background-color: #6c757d;
+}
+
+.nav-icon {
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.side-nav.collapsed .nav-icon {
+    margin-right: 0;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #0e1954;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 1;
+}
+
+.submenu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.submenu-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #f8f9fa;
+    background-color: #1a2338;
+    display: flex;
+    align-items: center;
+}
+
+.submenu-item:hover {
+    background-color: #6c757d;
+}
+
+.submenu-icon {
+    margin-right: 10px;
+}
+
+.submenu-toggle {
+    margin-left: auto;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.submenu-toggle.rotated {
+    transform: rotate(180deg);
+}
+.nav-item.active {
+    background-color: #6c757d; /* Active background color */
+    color: #f8f9fa; /* Active text color */
+}
+
+.submenu-item.active {
+    background-color: #6c757d; /* Active background color for sub-menu items */
+    color: #f8f9fa; /* Active text color */
+}
