@@ -1,6 +1,10 @@
+require('dotenv').config();  
 const express = require('express');
-const mysql = require('mysql2');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const ldapjs = require('ldapjs');  
+const mysql = require('mysql2');
+
 
  
 const app = express();
@@ -8,8 +12,11 @@ const port = 3006;
  
  
 app.use(cors("*"));
+app.use(bodyParser.json());
 app.use(express.json());
  
+const ldapServerUrl = process.env.LDAP_SERVER || 'ldap://172.16.0.13:389'; 
+const ldapPort = process.env.LDAP_PORT || 389;
  
 const connection = mysql.createConnection({  
   host: 'localhost',
@@ -437,24 +444,30 @@ app.get('/api/deals-probability', (req, res) => {
 });
  
 // POST request for login
-app.post('/login', (req, res) => {
-  const { email, password } = req.body;
- 
-  // Query to check if the user exists in the database
-  const query = 'SELECT * FROM login WHERE email = ? AND password = ?';
-  connection.query(query, [email, password], (err, results) => {
-    if (err) {
-      console.error('Error querying the database:', err);
-      return res.status(500).json({ success: false, message: 'Server error' });
-    }
- 
-    // If a user is found, results.length will be greater than 0
-    if (results.length > 0) {
-      res.json({ success: true });
-    } else {
-      res.json({ success: false, message: 'Invalid credentials' });
-    }
-  });
+app.post('/api/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const client = ldapjs.createClient({ url: ldapServerUrl });
+
+    await new Promise((resolve, reject) => {
+      client.bind(username, password, (err) => {
+        if (err) {
+          reject(err); 
+        } else {
+          resolve(); 
+        }
+      });
+    });
+
+    console.log('LDAP authentication successful');
+    client.unbind();  
+
+    return res.json({ success: true, message: 'Login successful' });
+  } catch (error) {
+    console.error('LDAP authentication failed:', error);
+    return res.json({ success: false, message: 'Invalid credentials' });
+  }
 });
  
 // Start the server

@@ -1,73 +1,63 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import "./Login.css";
-import { baseUrl2 } from "./API";
-
-// Path to your logo image in the public folder
-const logoPath = process.env.PUBLIC_URL + "/image.png";
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  
+import './Login.css';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false); // Added loading state
-  const navigate = useNavigate();
+  const [username, setUsername] = useState(''); 
+  const [password, setPassword] = useState(''); 
+  const [error, setError] = useState(''); 
+  const navigate = useNavigate(); 
 
-  const handleSubmit = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setError("");
-    setLoading(true);
+
     try {
-      const response = await axios.post(`${baseUrl2}/login`, {
-        email,
-        password,
+      const response = await axios.post('http://localhost:5000/api/login', {
+        username,
+        password
       });
-      setLoading(false);
+
       if (response.data.success) {
-        navigate("/home");
+        // Store user session data in localStorage (or sessionStorage)
+        localStorage.setItem('user', JSON.stringify({ username }));
+
+        // Redirect to home
+        navigate('/home');
       } else {
-        setError("Invalid credentials");
+        setError(response.data.message); // Display error message
       }
     } catch (err) {
-      setLoading(false);
-      console.error(err); // Log the error for debugging
-      setError("An error occurred during login");
+      console.error(err);
+      setError('An error occurred while trying to log in.');
     }
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <img src={logoPath} alt="Logo" className="logo" />
-        <h1>
-          <center>Enter your login credentials</center>
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Email:</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label>Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit" disabled={loading}>
-            {loading ? "Logging in..." : "Login"}
-          </button>
-          {error && <p style={{ color: "red" }}>{error}</p>}
-        </form>
-      </div>
+    <div className="login-container">
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label>Username:</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)} 
+            required
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} 
+            required
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      {error && <div className="error">{error}</div>} {/* Display error if any */}
     </div>
   );
 };
