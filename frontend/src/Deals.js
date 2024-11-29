@@ -20,8 +20,6 @@ function Deals() {
   const [closurePeriods, setClosurePeriods] = useState([]); // New state for closure periods
   const [regions, setRegions] = useState([]); // New state for Region
   const [typesEE_EN_NN, setTypesEE_EN_NN] = useState([]); // New state for "Type-EE_EN_NN"
- 
- 
   const [selectedOwners, setSelectedOwners] = useState(['ALL']);
   const [selectedStages, setSelectedStages] = useState(['ALL']);
   const [selectedQuarters, setSelectedQuarters] = useState(['ALL']);
@@ -31,6 +29,11 @@ const [selectedClosurePeriods, setSelectedClosurePeriods] = useState(['ALL']); /
 const [selectedRegions, setSelectedRegions] = useState(['ALL']); // Selected Regions
 const [selectedTypesEE_EN_NN, setSelectedTypesEE_EN_NN] = useState(['ALL']); // New state for selected "Type-EE_EN_NN"
  
+
+// Pagination states
+const [currentPage, setCurrentPage] = useState(1); // Tracks the current page number
+const itemsPerPage = 50; // Set items per page to 50
+
 // Function to reset filters
 const resetFilters = () => {
   setSelectedOwners(['ALL']);
@@ -110,7 +113,12 @@ const resetFilters = () => {
   const conversionRateUSDToINR = 80;
  
   useEffect(() => {
-    axios.get('http://localhost:3006/api/funnelingdatas')
+    //localStorage.get("buUnits")
+    var storedUnits = localStorage.getItem("bu_unit");
+    console.log("Stored Unit s@@@@@", storedUnits);
+   
+    axios.get('http://172.16.3.154:3006/api/funnelingdatas?buUnit='+storedUnits)
+
       .then(response => {
         const data = response.data;
         setData(data);
@@ -140,6 +148,42 @@ const resetFilters = () => {
         setLoading(false);
       });
   }, []);
+
+  // Pagination calculations
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+  // Function to handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  // Function to render pagination controls
+  const renderPaginationControls = () => {
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+
+    return (
+      <div className="pagination">
+        {pageNumbers.map(number => (
+          <button
+            key={number}
+            onClick={() => handlePageChange(number)}
+            className={number === currentPage ? 'active' : ''}
+          >
+            {number}
+          </button>
+        ))}
+      </div>
+    );
+  };
+
  
   useEffect(() => {
     const filterData = () => {
@@ -562,7 +606,7 @@ onChange={value => handleChange(value, setSelectedSbus)}
  
         </thead>
         <tbody>
-          {filteredData.map((item, index) => {
+          {currentItems.map((item, index) => {
             // Convert USD to INR with precise rounding
             const dealValueUSD = parseFloat(item.Deal_Value.replace(/[^0-9.-]/g, '')) || 0;
             const dealValueINR = dealValueUSD * conversionRateUSDToINR;
@@ -597,7 +641,8 @@ onChange={value => handleChange(value, setSelectedSbus)}
           })}
         </tbody>
       </table>
-   
+   {/* Render pagination controls */}
+   {renderPaginationControls()}
  
     </div>
   );

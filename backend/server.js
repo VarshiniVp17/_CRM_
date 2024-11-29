@@ -4,8 +4,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const ldapjs = require('ldapjs');  
 const mysql = require('mysql2');
-
-
+const mysqls = require('mysql2/promise'); // change this
+ 
+ 
  
 const app = express();
 const port = 3006;
@@ -15,19 +16,27 @@ app.use(cors("*"));
 app.use(bodyParser.json());
 app.use(express.json());
  
-const ldapServerUrl = process.env.LDAP_SERVER || 'ldap://172.16.0.13:389'; 
-const ldapPort = process.env.LDAP_PORT || 389;
+const ldapServerUrl = process.env.LDAP_SERVER ;
+const ldapPort = process.env.LDAP_PORT;
+const dbConfig = {
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+};
  
 const connection = mysql.createConnection({  
   host: 'localhost',
   user: 'root',
   password: 'root',
-  database: 'combined_database1'
+  database: 'combined_database1',
+ 
 });
  
  
 connection.connect((err) => {
   if (err) {
+ 
     console.error('Database connection failed:', err.stack);
     return;
   }
@@ -66,7 +75,15 @@ app.post('/upload', async (req, res) => {
  
 // Route to fetch data from `sample` table
 app.get('/api/funnelingdatas', (req, res) => {
-  const query = 'SELECT *, REGEXP_REPLACE(Account_Name, "[^a-zA-Z\s.,]", "") AS Account_Name  FROM crm_data;';
+  console.log('######' , req.query.buUnit);
+  var buUnitCondition = "";
+  if (req.query.buUnit != undefined){
+    buUnitCondition = " WHERE bu IN (" + req.query.buUnit + ")";
+ 
+  }
+  const query = 'SELECT *, REGEXP_REPLACE(Account_Name, "[^a-zA-Z\s.,]", "") AS Account_Name  FROM crm_data' + buUnitCondition + ';';
+  console.log('###### query' , query);
+  // const query = 'SELECT *, REGEXP_REPLACE(Account_Name, "[^a-zA-Z\s.,]", "") AS Account_Name  FROM crm_data;';
   connection.query(query, (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
@@ -446,27 +463,54 @@ app.get('/api/deals-probability', (req, res) => {
 // POST request for login
 app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
-
+ 
   try {
+    // Create LDAP client and authenticate user
     const client = ldapjs.createClient({ url: ldapServerUrl });
-
+ 
     await new Promise((resolve, reject) => {
       client.bind(username, password, (err) => {
         if (err) {
-          reject(err); 
+          reject(err);
         } else {
-          resolve(); 
+          resolve();
         }
       });
     });
-
+ 
     console.log('LDAP authentication successful');
-    client.unbind();  
-
-    return res.json({ success: true, message: 'Login successful' });
+    client.unbind();
+ 
+    // Extract user's email (or use username directly if it's already the email)
+    const email = `${username}`; // Adjust logic if needed to extract actual email
+ 
+    // Connect to MySQL and check if the user exists in access_table
+    const connections = await mysqls.createConnection(dbConfig);
+    const [rows] = await connections.execute(
+      'SELECT bu_unit FROM access_table WHERE email = ?',
+      [email]
+    );
+    await connections.end();
+ 
+    if (rows.length === 0) {
+      // User not found in access_table
+      return res.status(403).json({ success: false, message: 'Invalid user' });
+    }
+ 
+    // User exists, store email in context (session or token-based storage)
+    const buUnit = rows[0].bu_unit;
+    console.log('User found in access_table:', { email, buUnit });
+ 
+    // Return success response
+    return res.json({
+      success: true,
+      message: 'Login successful',
+      email,
+      bu_unit: buUnit,
+    });
   } catch (error) {
-    console.error('LDAP authentication failed:', error);
-    return res.json({ success: false, message: 'Invalid credentials' });
+    console.error('Error during login:', error);
+    return res.status(401).json({ success: false, message: 'Invalid credentials' });
   }
 });
  

@@ -13,14 +13,19 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3006/api/login', {
+      const response = await axios.post('http://172.16.3.154:3006/api/login', {
         username,
         password
       });
-
+      
       if (response.data.success) {
         // Store user session data in localStorage (or sessionStorage)
         localStorage.setItem('user', JSON.stringify({ username }));
+        localStorage.setItem("bu_unit",response.data.bu_unit);
+        // const { email, bu_unit } = response.data;
+        // localStorage.setItem('userEmail', email);
+        // localStorage.setItem('buUnit', bu_unit);
+
 
         // Redirect to home
         navigate('/home');
@@ -29,7 +34,7 @@ const Login = () => {
       }
     } catch (err) {
       console.error(err);
-      setError('An error occurred while trying to log in.');
+      setError('Invalid User. Please ensure you have access');
     }
   };
 
