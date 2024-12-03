@@ -7,10 +7,8 @@ const mysql = require('mysql2');
 const mysqls = require('mysql2/promise'); // change this
  
  
- 
 const app = express();
 const port = 3006;
- 
  
 app.use(cors("*"));
 app.use(bodyParser.json());

@@ -6,6 +6,7 @@ html, body {
 }
 
 /* Login page styling */
+/* Login page styling */
 .login-page {
   position: fixed; 
   top: 0; 
@@ -15,8 +16,10 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0CA1B6; /* Background color */
+  background: url('./images/logo.png') no-repeat center center; /* Set the background image */
+  background-size: cover; /* Ensure the image covers the entire area */
 }
+
 
 /* Login container styling */
 .login-container {

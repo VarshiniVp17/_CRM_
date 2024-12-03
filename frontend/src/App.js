@@ -6,7 +6,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import styled from "styled-components";
-import Header from "./Header";
 import SideNav from "./SideNav";
 import Home from "./Home";
 import Deals from "./Deals";
@@ -20,8 +19,9 @@ import Import from "./Import";
 import Login from "./Login"; // Import the Login component
 import "./App.css";
 
+// Styled Components
 const AppContainer = styled.div`
-  padding-top: 60px;
+  padding-top: 0; /* Remove header padding */
   display: flex;
 `;
 
@@ -39,16 +39,16 @@ function App() {
     setIsCollapsed(!isCollapsed);
   };
 
-  // Conditionally render the header and side navigation only if not on the login page*
-  const shouldShowNavAndHeader = location.pathname !== "/";
+  // Check if the current page is the login page
+  const isLoginPage = location.pathname === "/";
 
   return (
     <AppContainer>
-      {shouldShowNavAndHeader && <Header />}
-      {shouldShowNavAndHeader && (
+      {/* Show SideNav only if not on the login page */}
+      {!isLoginPage && (
         <SideNav isCollapsed={isCollapsed} toggleNav={toggleNav} />
       )}
-      <ContentContainer isCollapsed={isCollapsed}>
+      <ContentContainer isCollapsed={!isLoginPage && isCollapsed}>
         <Routes>
           <Route path="/" element={<Login />} /> {/* Add Login page route */}
           <Route path="/home" element={<Home />} />{" "}

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaHome, FaChartBar, FaBars, FaCaretDown, FaFunnelDollar, FaCog, FaUser, FaBriefcase, FaInfoCircle, FaBuilding, FaTable, FaFileImport, FaFileAlt } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import { FaHome, FaChartBar, FaBars, FaCaretDown, FaFunnelDollar, FaCog, FaUser, FaBriefcase, FaInfoCircle, FaBuilding, FaTable, FaFileImport, FaFileAlt, FaSignOutAlt } from 'react-icons/fa';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Logo from './images/logo3.png';
 
-// Styled-components
 const SideNavContainer = styled.div`
   position: fixed;
-  top: 3;
+  top: 0;
   left: 0;
   width: ${props => props.collapsed ? '60px' : '220px'};
   height: 100vh;
@@ -74,12 +74,30 @@ const SubMenuItem = styled(NavItem)`
   }
 `;
 
+const LogoContainer = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #0e1954;
+  box-sizing: border-box;
+  text-decoration: none;
+`;
+
+const LogoImage = styled.img`
+  max-width: ${props => props.collapsed ? '40px' : '100px'};
+  height: auto;
+  transition: max-width 0.3s ease;
+`;
+
 const SideNav = ({ isCollapsed, toggleNav }) => {
   const [isOpportunityOpen, setIsOpportunityOpen] = useState(false);
   const [isChartsOpen, setIsChartsOpen] = useState(false);
   const [isCustomerDetailsOpen, setIsCustomerDetailsOpen] = useState(false);
   const [isReportOpen, setIsReportOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('/');
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isCollapsed) {
@@ -94,8 +112,19 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     setActiveTab(path);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    sessionStorage.removeItem('authSession');
+    navigate('/');
+  };
+
   return (
     <SideNavContainer collapsed={isCollapsed}>
+      {/* Clickable Logo */}
+      <LogoContainer to="/home">
+        <LogoImage src={Logo} alt="Logo" collapsed={isCollapsed} />
+      </LogoContainer>
+
       <ToggleButton onClick={toggleNav}>
         <FaBars />
       </ToggleButton>
@@ -276,11 +305,20 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
         </NavIcon>
         {!isCollapsed && 'Import'}
       </NavItem>
+
+      {/* Logout as NavItem */}
+      <NavItem 
+        to="/" 
+        collapsed={isCollapsed} 
+        onClick={handleLogout}
+      >
+        <NavIcon collapsed={isCollapsed}>
+          <FaSignOutAlt />
+        </NavIcon>
+        {!isCollapsed && 'Logout'}
+      </NavItem>
     </SideNavContainer>
   );
 };
 
 export default SideNav;
-
-
-

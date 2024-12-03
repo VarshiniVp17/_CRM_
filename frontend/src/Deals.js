@@ -106,16 +106,14 @@ const resetFilters = () => {
     { label: "Region", key: "Region" },
     { label: "Business Type", key: "Business_Type" },
     { label: "BU", key: "BU" },
-    // Add more fields as necessary
   ];
  
-  // Define conversion rate
   const conversionRateUSDToINR = 80;
  
   useEffect(() => {
     //localStorage.get("buUnits")
     var storedUnits = localStorage.getItem("bu_unit");
-    console.log("Stored Unit s@@@@@", storedUnits);
+    console.log("Stored Unit SBU:", storedUnits);
    
     axios.get('http://172.16.3.154:3006/api/funnelingdatas?buUnit='+storedUnits)
 
@@ -494,43 +492,55 @@ onChange={value => handleChange(value, setSelectedSbus)}
  
         <thead>
         <tr>
-  <th className='cell'  style={{ width: '50px' }}>
+          {/* ID */}
+  <th className='cell'  style={{ width: '100px' }}>  
   </th>
-  <th className='cell' style={{ width: '90px' }} >
+  {/* created on */}
+  <th className='cell' style={{ width: '100px' }} >
   </th>
-  <th className='cell' style={{ width: '350px' }}>
+  {/* Account name */}
+  <th className='cell' style={{ width: '300px' }}>
   </th>
-  <th className='cell' style={{ width: '250px' }} >
+  {/* Opportunity */}
+  <th className='cell' style={{ width: '300px' }} >
   </th>
+  {/* Deal owner */}
   <th className='cell' style={{ width: '130px' }}>
   </th>
   {/* <th className='cell' style={{ width: '120px' }}>
   </th> */}
+  {/* Deal value USD */}
   <th className='value'  style={{ width: '100px' }} >
   SUM: $ {formatToShortNumber(totalDealValue)}
   </th>
+  {/* Deal value INR */}
   <th className='value' style={{ width: '110px' }}>
   SUM: ₹ {formatToShortNumberINR(totalDealValueINR)}
   </th>
-  <th className='cell'style={{ width: '50px' }} >
+  {/* Financial_Quarter */}
+  <th className='cell'style={{ width: '110px' }} >
   </th>
-  <th className='cell' style={{ width: '100px' }} >
+  {/* Planned_Revenue_USD */}
+  <th className='cell' style={{ width: '120px' }} >
   </th>
+  {/* Planned_Revenue_INR */}
   <th className='value' style={{ width: '110px' }}>
   SUM: $ {formatToShortNumber(totalPlannedRevenue)}
   </th>
-  <th className='value' style={{ width: '110px' }}>
+  {/* Stage */}
+  <th className='value' style={{ width: '150px' }}>
   SUM: ₹ {formatToShortNumberINR(totalPlannedRevenueINR)}
   </th>
   {/* <th className='cell' style={{ width: '129px' }}>
   </th> */}
   <th className='cell' onClick={() => handleSort('Closure_Period')}style={{ width: '114px' }}>
   </th>
+  {/* aging */}
   <th className='cell' style={{ width: '109px' }}>
   </th>
-  <th className='cell' style={{ width: '80px' }}>
+  <th className='cell' style={{ width: '10px' }}>
   </th>
-  <th className='cell' style={{ width: '60px' }}>
+  <th className='cell' style={{ width: '10px' }}>
   </th>
 </tr>
 <tr>
@@ -626,11 +636,11 @@ onChange={value => handleChange(value, setSelectedSbus)}
                 <td>{item.Deals_Owner}</td>
                 {/* <td>{item.Business_Type}</td> */}
                 <td>{item.Deal_Value}</td>
-                <td>₹{formattedDealValueINR}</td>
+                <td>{formattedDealValueINR}</td>
                 {/* <td>{item.BU}</td> */}
                 <td>{item.Financial_Quarter}</td>
                 <td>{item.Planned_Revenue_in_Q_USD}</td>
-                <td>₹{formattedPlannedRevenueINR}</td>
+                <td>{formattedPlannedRevenueINR}</td>
                 <td>{item.Stage}</td>
                 {/* <td>{item.Closure_Period}</td> */}
                 <td>{item.Closing_Date}</td> {/* Format the date */}

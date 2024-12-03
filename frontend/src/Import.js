@@ -12,7 +12,7 @@ const ImportContainer = styled.div`
   justify-content: flex-start;
   height: 100vh;
   width: 100vw;
-  background-color: #f5f5f5;
+  background-color: white;
   padding: 20px;
   box-sizing: border-box;
 `;
@@ -99,7 +99,7 @@ const Import = () => {
         return `${String(date.getDate()).padStart(2, '0')}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getFullYear()}`;
       }
     }
-    return value; // Return the value unchanged if not a date
+    return value; 
   };
  
   const handleFileParse = (file) => {

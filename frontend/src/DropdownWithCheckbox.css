@@ -10,7 +10,7 @@
     color: #333;
     cursor: pointer;
     outline: none; /* Removes the outline */
-    width: 600px;  /* Ensures the same size as dropdown options */
+    width: 300px;  /* Ensures the same size as dropdown options */
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
