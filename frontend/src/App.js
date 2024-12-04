@@ -14,6 +14,7 @@ import PersonalContacts from "./PersonalContacts";
 import OrganizationForm from "./OrganizationForm";
 import SalesFunnel from "./SalesFunnel";
 import FinancialYear from "./FinancialYear";
+import UnderConstruction from "./UnderConstruction";
 import BarChart from "./Barchart";
 import Import from "./Import";
 import Login from "./Login"; // Import the Login component
@@ -55,6 +56,7 @@ function App() {
           {/* Dashboard after login */}
           <Route path="/report/deals" element={<Deals />} />
           <Route path="/report/FinancialYear" element={<FinancialYear />} />
+          <Route path="/underconstruction" element={<UnderConstruction />} />
           <Route
             path="/opportunity/opportunity-details"
             element={<OpportunityForm />}

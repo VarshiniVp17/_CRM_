@@ -34,16 +34,18 @@ const ButtonContainer = styled.div`
 `;
  
 const Button = styled.button`
-  background-color: #0e1954; /* Blue color */
+  background-color: #0e1954;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
- 
+  transition: all 0.3s ease;
+  width: 150px; /* Ensures both buttons are of equal width */
+
   &:hover {
-    background-color: #1a3d8f; /* Darker blue on hover */
+    background-color: #1a3d8f;
   }
 `;
  
@@ -99,7 +101,7 @@ const Import = () => {
         return `${String(date.getDate()).padStart(2, '0')}-${String(date.getMonth() + 1).padStart(2, '0')}-${date.getFullYear()}`;
       }
     }
-    return value; 
+    return value;
   };
  
   const handleFileParse = (file) => {

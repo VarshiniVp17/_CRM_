@@ -171,12 +171,22 @@ const resetFilters = () => {
       <div className="pagination">
         {pageNumbers.map(number => (
           <button
-            key={number}
-            onClick={() => handlePageChange(number)}
-            className={number === currentPage ? 'active' : ''}
-          >
-            {number}
-          </button>
+          key={number}
+          onClick={() => handlePageChange(number)}
+          className={number === currentPage ? 'active' : ''}
+          style={{
+            margin: '0 5px',
+            width: '50px',
+            height: '50px',
+            cursor: 'pointer',
+            backgroundColor: '#f9f9f9',
+            border: '1px solid #ddd',
+            color: '#0e1954',
+          }}
+        >
+          {number}
+        </button>
+        
         ))}
       </div>
     );
@@ -431,7 +441,16 @@ const resetFilters = () => {
           </button>
         </CSVLink>
        
-        <button onClick={() => exportToPDF(filteredData)}><b>Export PDF</b></button>
+        <button style={{
+            padding: '10px 20px',
+            margin: '0 10px',
+            backgroundColor: '#0E1954',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer' // Change cursor to pointer
+          }}
+         onClick={() => exportToPDF(filteredData)}><b>Export PDF</b></button>
  
       </div>
       <button className="reset-button" onClick={resetFilters}>
@@ -626,6 +645,7 @@ onChange={value => handleChange(value, setSelectedSbus)}
             const plannedRevenueUSD = parseFloat(item.Planned_Revenue_in_Q_USD.replace(/[^0-9.-]/g, '')) || 0;
             const plannedRevenueINR = plannedRevenueUSD * conversionRateUSDToINR;
             const formattedPlannedRevenueINR = Math.round(plannedRevenueINR).toLocaleString('en-IN');
+            
  
             return (
               <tr key={index}>
