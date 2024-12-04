@@ -1,0 +1,44 @@
+/* UnderConstruction.css */
+
+.construction-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .construction-message h1 {
+    font-size: 2.5rem;
+    color: #ff6f00;
+    margin-bottom: 20px;
+  }
+  
+  .construction-message p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .construction-image img {
+    max-width: 400px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .construction-message h1 {
+      font-size: 2rem;
+    }
+  
+    .construction-message p {
+      font-size: 1rem;
+    }
+  
+    .construction-image img {
+      max-width: 100%;
+    }
+  }
+  

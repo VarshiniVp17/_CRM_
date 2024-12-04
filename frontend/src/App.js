@@ -17,6 +17,7 @@ import FinancialYear from "./FinancialYear";
 import BarChart from "./Barchart";
 import Import from "./Import";
 import Login from "./Login"; // Import the Login component
+import UnderConstruction from './UnderConstruction'; // Import the UnderConstruction component
 import "./App.css";
 
 // Styled Components
@@ -70,6 +71,9 @@ function App() {
           <Route path="/charts/SalesFunnel" element={<SalesFunnel />} />
           <Route path="/charts/barchart" element={<BarChart />} />
           <Route path="/import" element={<Import />} />
+          
+          {/* Add Under Construction route */}
+          <Route path="/Settings" element={<UnderConstruction />} />
         </Routes>
       </ContentContainer>
     </AppContainer>
