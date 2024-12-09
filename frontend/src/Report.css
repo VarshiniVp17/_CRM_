@@ -68,7 +68,8 @@ tbody td:nth-child(10) {
 
 tbody td:nth-child(8),
   tbody td:nth-child(2),
-    tbody td:nth-child(12) {
+    tbody td:nth-child(12),
+      tbody td:nth-child(13) {
   text-align: center !important;
 }
 
@@ -166,14 +167,6 @@ tbody td:nth-child(8),
   margin-top: 20px;
 }
 
-.pagination button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  color: #0e1954;
-}
 
 .pagination button.active {
   background-color: #0E1954;

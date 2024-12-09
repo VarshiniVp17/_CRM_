@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';  
 import logo from './images/logo1.png';
+import logoo from './images/P.png';
 import './Login.css';
  
 const Login = () => {
@@ -40,24 +41,28 @@ const Login = () => {
  
   return (
     <div className="login-page">
+      <img src={logo} alt="SRM Tech Logo" className="logo" />
 <div className="login-container">
-        {/* <img src="src/assets/images/image1.png" alt="SRM Tech Logo" class="login-logo" ></img> */}
-<img src={logo} alt="SRM Tech Logo" className="login-logo" />
-<h2>Welcome!!</h2>
+       
+<img src={logoo} alt="SRM Tech Logo" className="login-logo" />
+{/* <h2>Welcome!!</h2> */}
 <form onSubmit={handleLogin}>
 <div>
-<label>Username:</label>
+<label>Email:</label>
 <input
             type="text"
+            placeholder= "abc@srmtech.com"
             value={username}
             onChange={(e) => setUsername(e.target.value)} 
             required
           />
 </div>
+
 <div>
 <label>Password:</label>
 <input
             type="password"
+            placeholder= "Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)} 
             required

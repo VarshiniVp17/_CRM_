@@ -3,10 +3,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
+  font-size: 16px; /* Standard readable font size */
+  line-height: 1.6; /* Improves readability */
+  color: #333; /* Neutral, professional text color */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+  font-size: 14px; /* Slightly smaller for code snippets */
+  color: #e83e8c; /* Adds a nice contrast for code elements */
+  background-color: #f8f9fa; /* Light background for better readability */
+  padding: 0.2em 0.4em; /* Adds spacing around code for a clean look */
+  border-radius: 4px; /* Rounded corners for a modern appearance */
 }
