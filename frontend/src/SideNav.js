@@ -48,7 +48,6 @@ const SideNavContainer = styled.div`
 const NavItem = styled(NavLink)`
   display: flex;
   align-items: center;
-  font-weight: bold;
   width: 100%;
   padding: 15px 20px;
   text-decoration: none;
@@ -252,11 +251,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/* customermanagement -> contacts */}
     <SubMenuItem
-              to="/customermanagement/contacts"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/customermanagement/contacts'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/customermanagement/contacts');
+                handleTabClick('/underconstruction');
                 setcontacts(!contacts);
               }}
     >
@@ -267,27 +266,27 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     <SubMenu isOpen={contacts} collapsed={isCollapsed}>
    
     <SubMenuItem
-                to="/customermanagement/contacts/new"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/customermanagement/contacts/new'}
-                onClick={() => handleTabClick('/customermanagement/contacts/new')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaPlus style={{ marginRight: '10px' }} />New
     </SubMenuItem>
     <SubMenuItem
-                to="/customermanagement/contacts/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/customermanagement/contacts/manage'}
-                onClick={() => handleTabClick('/customermanagement/contacts/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Manage  
     </SubMenuItem>
    
     <SubMenuItem
-                to="/customermanagement/contacts/import-export"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/customermanagement/contacts/import-export'}
-                onClick={() => handleTabClick('/customermanagement/contacts/import-export')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaExchangeAlt style={{ marginRight: '10px' }} />Import/ Export
     </SubMenuItem>
@@ -297,11 +296,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/* customermanagement -> organisation */}
     <SubMenuItem
-              to="/customermanagement/organisation"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/customermanagement/organisation'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/customermanagement/organisation');
+                handleTabClick('/underconstruction');
                 setorganisation(!organisation);
               }}
     >
@@ -310,28 +309,28 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={organisation} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/customermanagement/organisation/new"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/customermanagement/organisation/new'}
-                onClick={() => handleTabClick('/customermanagement/organisation/new')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaPlus style={{ marginRight: '10px' }} />New
     </SubMenuItem>
    
     <SubMenuItem
-                to="/customermanagement/organisation/view"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/customermanagement/organisation/view'}
-                onClick={() => handleTabClick('/customermanagement/organisation/view')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaEye style={{ marginRight: '10px' }} /> View
     </SubMenuItem>
    
     <SubMenuItem
-                to="/customermanagement/organisation/import-export"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/customermanagement/organisation/import-export'}
-                onClick={() => handleTabClick('/customermanagement/organisation/import-export')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaExchangeAlt style={{ marginRight: '10px' }} />Export/Import
     </SubMenuItem>
@@ -364,11 +363,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/* Prospectus -> Lead */}
     <SubMenuItem
-              to="/prospectus/lead"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/prospectus/lead'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/prospectus/lead');
+                handleTabClick('/underconstruction');
                 setlead(!lead);
               }}
     >
@@ -379,27 +378,27 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     <SubMenu isOpen={lead} collapsed={isCollapsed}>
    
     <SubMenuItem
-                to="/prospectus/lead/new"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/prospectus/lead//new'}
-                onClick={() => handleTabClick('/prospectus/lead/new')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaPlus style={{ marginRight: '10px' }} />New
     </SubMenuItem>
     <SubMenuItem
-                to="/prospectus/lead/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/prospectus/lead/manage'}
-                onClick={() => handleTabClick('/prospectus/lead/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Manage  
     </SubMenuItem>
    
     <SubMenuItem
-                to="/prospectus/lead/import-export"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/prospectus/lead/import-export'}
-                onClick={() => handleTabClick('/prospectus/lead/import-export')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaExchangeAlt style={{ marginRight: '10px' }} />Import/ Export
     </SubMenuItem>
@@ -409,11 +408,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/* Prospectus -> Expo/events */}
     <SubMenuItem
-              to="/prospectus/expo"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/prospectus/expo'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/prospectus/expo');
+                handleTabClick('/underconstruction');
                 setexpo(!expo);
               }}
     >
@@ -422,28 +421,28 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={expo} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/prospectus/expo/new"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/prospectus/expo/new'}
-                onClick={() => handleTabClick('/prospectus/expo/new')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaPlus style={{ marginRight: '10px' }} />New
     </SubMenuItem>
    
     <SubMenuItem
-                to="/prospectus/expo/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/prospectus/expo/manage'}
-                onClick={() => handleTabClick('/prospectus/expo/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} /> Manage
     </SubMenuItem>
    
     <SubMenuItem
-                to="/prospectus/expo/import-export"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/prospectus/expo/import-export'}
-                onClick={() => handleTabClick('/prospectus/expo/import-export')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaExchangeAlt style={{ marginRight: '10px' }} />Export/Import
     </SubMenuItem>
@@ -876,11 +875,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/* Reports & Analytics -> Reports dashboard */}
     <SubMenuItem
-              to="/reports/dashboard"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/reports/dashboard'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/reports/dashboard');
+                handleTabClick('/underconstruction');
                 setdashboard(!dashboard);
               }}
     >
@@ -889,37 +888,37 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={dashboard} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/reports/dashboard/view"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/dashboard/view'}
-                onClick={() => handleTabClick('/reports/dashboard/view')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaEye style={{ marginRight: '10px' }} /> View
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/dashboard/customize"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/dashboard/customize'}
-                onClick={() => handleTabClick('/reports/dashboard/customize')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Customize
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/dashboard/schedule"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/dashboard/schedule'}
-                onClick={() => handleTabClick('/reports/dashboard/schedule')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCalendarAlt  style={{ marginRight: '10px' }} />Schedule
     </SubMenuItem>
     </SubMenu>
     {/* Reports & Analytics -> Sales report */}
     <SubMenuItem
-              to="/reports/sales"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/reports/sales'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/reports/sales');
+                handleTabClick('/underconstruction');
                 setsalesreport(!salesreport);
               }}
     >
@@ -928,34 +927,34 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={salesreport} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/reports/sales/pipeline"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/sales/pipeline'}
-                onClick={() => handleTabClick('/reports/sales/pipeline')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaProjectDiagram style={{ marginRight: '10px' }} /> Pipeline
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/sales/forecasting"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/sales/forecasting'}
-                onClick={() => handleTabClick('/reports/sales/forecasting')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUser style={{ marginRight: '10px' }} />Forcasting
     </SubMenuItem>
     <SubMenuItem
-                to="reports/sales/closed"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === 'reports/sales/closed'}
-                onClick={() => handleTabClick('reports/sales/closed')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaTimes  style={{ marginRight: '10px' }} />Closed
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/sales/rep"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/sales/rep'}
-                onClick={() => handleTabClick('/reports/sales/rep')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaTachometerAlt style={{ marginRight: '10px' }} />Rep Performance
     </SubMenuItem>
@@ -965,11 +964,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     {/* Reports & Analytics -> CustomerReports  */}
    
     <SubMenuItem
-              to="/reports/customer"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/reports/customer'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/reports/customer');
+                handleTabClick('/underconstruction');
                 setcustomerreports(!customerreports);
               }}
     >
@@ -978,46 +977,46 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={customerreports} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/reports/customer/segment"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/customer/segment'}
-                onClick={() => handleTabClick('/reports/customer/segment')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} /> Segmentation
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/customer/growth"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/customer/growth'}
-                onClick={() => handleTabClick('/reports/customer/growth')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaArrowUp   style={{ marginRight: '10px' }} />Growth
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/customer/rate"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/customer/rate'}
-                onClick={() => handleTabClick('/reports/customer/rate')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCube style={{ marginRight: '10px' }} />Churn rate
     </SubMenuItem>
    
     <SubMenuItem
-                to="/reports/customer/history"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/customer/history'}
-                onClick={() => handleTabClick('/reports/customer/history')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaHistory style={{ marginRight: '10px' }} />History
     </SubMenuItem>
     </SubMenu>
     {/* Reports & Analytics -> Marketing Reports  */}
     <SubMenuItem
-              to="/reports/marketing"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/reports/marketing'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/reports/marketing');
+                handleTabClick('/underconstruction');
                 setmarketingreports(!marketingreports);
               }}
     >
@@ -1026,26 +1025,26 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={marketingreports} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/reports/marketing/perform"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/marketing/perform'}
-                onClick={() => handleTabClick('/reports/marketing/perform')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaTachometerAlt style={{ marginRight: '10px' }} /> Performance
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/marketing/analysis"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/marketing/analysis'}
-                onClick={() => handleTabClick('/reports/marketing/analysis')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaChartLine  style={{ marginRight: '10px' }} />Analysis
     </SubMenuItem>
     <SubMenuItem
-                to="/reports/marketing/roi"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/reports/marketing/roi'}
-                onClick={() => handleTabClick('/reports/marketing/roi')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaBalanceScale  style={{ marginRight: '10px' }} />ROI
     </SubMenuItem>
@@ -1078,11 +1077,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     <SubMenu isOpen={setting} collapsed={isCollapsed}>
      {/*  Settings & administration -> intergration */}
     <SubMenuItem
-              to="/settings/integration"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/integration'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/integration');
+                handleTabClick('/underconstruction');
                 setintegration(!integration);
               }}
     >
@@ -1092,11 +1091,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     {/*  Settings & administration -> intergration ->email */}
     <SubMenu isOpen={integration} collapsed={isCollapsed}>
     <SubMenuItem
-              to="/settings/integration/email"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/integration/email'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/integration/email');
+                handleTabClick('/underconstruction');
                 setemailint(!emailint);
               }}
     >
@@ -1105,18 +1104,18 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={emailint} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/integration/email/sync"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/email/sync'}
-                onClick={() => handleTabClick('/settings/integration/email/sync')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaSync  style={{ marginRight: '10px' }} />Sync
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/integration/email/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/email/manage'}
-                onClick={() => handleTabClick('/settings/integration/email/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Manage
     </SubMenuItem>
@@ -1126,11 +1125,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
    
     <SubMenuItem
-              to="/settings/integration/tools"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/integration/tools'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/integration/tools');
+                handleTabClick('/underconstruction');
                 settools(!tools);
               }}
     >
@@ -1139,26 +1138,26 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={tools} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/integration/tools/marketing"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/tools/marketing'}
-                onClick={() => handleTabClick('/settings/integration/tools/marketing')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUser style={{ marginRight: '10px' }} />Marketing Tools
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/integration/tools/payment"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/tools/payment'}
-                onClick={() => handleTabClick('/settings/integration/tools/payment')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCreditCard style={{ marginRight: '10px' }} />Paymemt Gateways
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/integration/tools/api"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/tools/api'}
-                onClick={() => handleTabClick('/settings/integration/tools/api')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />API Management
     </SubMenuItem>
@@ -1167,11 +1166,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/*  Settings & administration -> intergration -> export-import */}
     <SubMenuItem
-              to="/settings/integration/export-import"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/integration/export-import'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/integration/export-import');
+                handleTabClick('/underconstruction');
                 setdata(!data);
               }}
     >
@@ -1182,18 +1181,18 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     <SubMenu isOpen={data} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/integration/export-import/import"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/export-import/import'}
-                onClick={() => handleTabClick('/settings/integration/export-import/import')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaFileImport style={{ marginRight: '10px' }} />Import
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/integration/export-import/export"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/integration/export-import/export'}
-                onClick={() => handleTabClick('/settings/integration/export-import/export')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaFileExport style={{ marginRight: '10px' }} />Export
     </SubMenuItem>
@@ -1203,11 +1202,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/* System & administration -> Support & Service Management */}
     <SubMenuItem
-              to="/settings/support"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/support'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/support');
+                handleTabClick('/underconstruction');
                 setsupport(!support);
               }}
     >
@@ -1216,11 +1215,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={support} collapsed={isCollapsed}>
     <SubMenuItem
-              to="/settings/support/knowledge"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/support/knowledge'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/support/knowledge');
+                handleTabClick('/underconstruction');
                 setbase(!base);
               }}
     >
@@ -1230,26 +1229,26 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     <SubMenu isOpen={base} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/support/knowledge/view"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/support/knowledge/view'}
-                onClick={() => handleTabClick('/settings/support/knowledge/view')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaEye style={{ marginRight: '10px' }} />View
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/support/knowledge/add"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/support/knowledge/add'}
-                onClick={() => handleTabClick('/settings/support/knowledge/add')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUser style={{ marginRight: '10px' }} />Add
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/support/knowledge/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/support/knowledge/manage'}
-                onClick={() => handleTabClick('/settings/support/knowledge/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Manage
     </SubMenuItem>
@@ -1262,11 +1261,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
      {/*  Settings & administration -> mobile */}
      <SubMenuItem
-              to="/settings/mobile"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/mobile'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/mobile');
+                handleTabClick('/underconstruction');
                 setcrm(!crm);
               }}
     >
@@ -1276,11 +1275,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     {/*  Settings & administration -> mobile ->quickaccess */}
     <SubMenu isOpen={crm} collapsed={isCollapsed}>
     <SubMenuItem
-              to="/settings/mobile/dahboard"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/mobile/dahboard'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/mobile/dahboard');
+                handleTabClick('/underconstruction');
                 setaccess(!access);
               }}
     >
@@ -1289,18 +1288,18 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={access} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/mobile/dahboard/view"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/mobile/dahboard/View'}
-                onClick={() => handleTabClick('/settings/mobile/dahboard/view')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaEye style={{ marginRight: '10px' }} />View
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/mobile/dahboard/sync"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/mobile/dahboard/sync'}
-                onClick={() => handleTabClick('/settings/mobile/dahboard/sync')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaSync  style={{ marginRight: '10px' }} />Sync
     </SubMenuItem>
@@ -1310,11 +1309,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
    
     <SubMenuItem
-              to="/settings/mobile/notify"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/mobile/notify'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/mobile/notify');
+                handleTabClick('/underconstruction');
                 setnotify(!notify);
               }}
     >
@@ -1323,10 +1322,10 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={notify} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/mobile/notify/push"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/mobile/notify/push'}
-                onClick={() => handleTabClick('/settings/mobile/notify/push')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaExclamationCircle style={{ marginRight: '10px' }} />Push Notifications
     </SubMenuItem>
@@ -1335,11 +1334,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/*  Settings & administration -> mobile -> offline */}
     <SubMenuItem
-              to="/settings/mobile/offline"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/mobile/offline'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/mobile/offline');
+                handleTabClick('/underconstruction');
                 setoffline(!offline);
               }}
     >
@@ -1350,18 +1349,18 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     <SubMenu isOpen={offline} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/mobile/offline/access"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/mobile/offline/access'}
-                onClick={() => handleTabClick('/settings/mobile/offline/access')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUser style={{ marginRight: '10px' }} />Access
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/mobile/offline/sync"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/mobile/offline/sync'}
-                onClick={() => handleTabClick('/settings/mobile/offline/sync')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaSync  style={{ marginRight: '10px' }} />Sync
     </SubMenuItem>
@@ -1371,11 +1370,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     {/* settings & administration -> admin */}
    
     <SubMenuItem
-              to="/settings/admin"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/admin'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/admin');
+                handleTabClick('/underconstruction');
                 setadmin(!admin);
               }}
     >
@@ -1385,11 +1384,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     {/*  Settings & administration -> admin ->user */}
     <SubMenu isOpen={admin} collapsed={isCollapsed}>
     <SubMenuItem
-              to="/settings/admin/user"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/admin/user'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/admin/user');
+                handleTabClick('/underconstruction');
                 setuser(!user);
               }}
     >
@@ -1398,26 +1397,26 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={user} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/admin/user/add"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/user/add'}
-                onClick={() => handleTabClick('/settings/admin/user/add')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaPlus style={{ marginRight: '10px' }} />Add/Remove
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/admin/user/assign"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/user/assign'}
-                onClick={() => handleTabClick('/settings/admin/user/assign')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUserTag style={{ marginRight: '10px' }} />Assign Role
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/admin/user/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/user/manage'}
-                onClick={() => handleTabClick('/settings/admin/user/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Manage Teams
     </SubMenuItem>
@@ -1427,11 +1426,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
    
     <SubMenuItem
-              to="/settings/admin/config"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/admin/config'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/admin/config');
+                handleTabClick('/underconstruction');
                 setconfig(!config);
               }}
     >
@@ -1440,26 +1439,26 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
     </SubMenuItem>
     <SubMenu isOpen={config} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/admin/config/settings"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/config/settings'}
-                onClick={() => handleTabClick('/settings/admin/config/settings')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaTools style={{ marginRight: '10px' }} />Settings
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/admin/config/customize"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/config/customize'}
-                onClick={() => handleTabClick('/settings/admin/config/customize')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Customize
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/admin/config/rules"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/config/rules'}
-                onClick={() => handleTabClick('/settings/admin/config/rules')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaSlidersH style={{ marginRight: '10px' }} />Set-up Rules
     </SubMenuItem>
@@ -1468,11 +1467,11 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     {/*  Settings & administration -> admin -> Security */}
     <SubMenuItem
-              to="/settings/admin/security"
+              to="/underconstruction"
               collapsed={isCollapsed}
-              isActive={activeTab === '/settings/admin/security'}
+              isActive={activeTab === '/underconstruction'}
               onClick={() => {
-                handleTabClick('/settings/admin/security');
+                handleTabClick('/underconstruction');
                 setsecurity(!security);
               }}
     >
@@ -1483,27 +1482,27 @@ const SideNav = ({ isCollapsed, toggleNav }) => {
    
     <SubMenu isOpen={security} collapsed={isCollapsed}>
     <SubMenuItem
-                to="/settings/admin/security/configure"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/security/configure'}
-                onClick={() => handleTabClick('/settings/admin/security/configure')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUser style={{ marginRight: '10px' }} />Configure
     </SubMenuItem>
     <SubMenuItem
-                to="/settings/admin/security/access"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/security/access'}
-                onClick={() => handleTabClick('/settings/admin/security/access')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaUserLock style={{ marginRight: '10px' }} />Data Access
     </SubMenuItem>
    
     <SubMenuItem
-                to="/settings/admin/security/manage"
+                to="/underconstruction"
                 collapsed={isCollapsed}
-                isActive={activeTab === '/settings/admin/security/manage'}
-                onClick={() => handleTabClick('/settings/admin/security/manage')}
+                isActive={activeTab === '/underconstruction'}
+                onClick={() => handleTabClick('/underconstruction')}
     >
     <FaCogs style={{ marginRight: '10px' }} />Manage
     </SubMenuItem>
